@@ -3,14 +3,6 @@ import { ReviewOnScroll } from "../ReviewOnScroll"
 
 export const About = () => {
 
-    // const frontendSkills = [
-    //     { name: "HTML", icon: "html5" },
-    //     { name: "CSS", icon: "css3" },
-    //     { name: "JavaScript", icon: "javascript" },
-    //     { name: "React", icon: "react" },
-    //     { name: "Tailwind CSS", icon: "tailwindcss" },
-    //     { name: "Next.js", icon: "nextjs" },
-    // ];
      const frontendSkills = [
         "HTML",
         "CSS",
@@ -60,10 +52,7 @@ export const About = () => {
                                 <p className="text-gray-300 leading-relaxed">Designed and developed a web application to track industrial training progress using React, pure CSS, and localStorage. Features include task logs, progress summaries, and a user-friendly dashboard interface optimized for mobile devices.</p>
                             </div>
                             <div className="mt-6">
-                                <h4 className="text-lg font-semibold mb-2">To-Do List App</h4>
-                                
-                                {/* <p className="text-sm italic text-gray-400 mb-4">January 2025 - present</p> */}
-                                {/* <p className="text-gray-300 leading-relaxed">Created a personal portfolio website to showcase my projects and skills using React, Tailwind CSS, and Framer Motion. The site features smooth animations, responsive design, and a contact form for potential clients.</p> */}
+                                <h4 className="text-lg font-semibold mb-2">To-Do List App</h4>                     
                                 <p className="mb-1 text-gray-300">Personal Project</p>
                                 <p className="text-sm italic mb-4 text-gray-400">March 2025</p>
                                 <p className="text-gray-300 leading-relaxed">Built a sleek and reponsive task manager with custom notifications, snooze features, and animated UI elements. 

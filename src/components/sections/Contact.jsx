@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import emailjs from 'emailjs-com'
 import emailjs from '@emailjs/browser';
 import { ReviewOnScroll } from "../ReviewOnScroll"
 
@@ -10,10 +9,6 @@ export const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',email: '', message: ''
     });
-    // console.log("Template ID:", import.meta.env.VITE_TEMPLATE_ID);
-    // console.log("Public Key:", import.meta.env.VITE_PUBLIC_KEY);
-    
-
 
     const emailJsConfig = {
         serviceId: import.meta.env.VITE_SERVICE_ID,
@@ -31,11 +26,9 @@ export const Contact = () => {
         e.target,
         emailJsConfig.publicKey
         )
-
-        // emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
         .then((result) => {
             alert("Message sent successfully!");
-            setFormData({ name: '', email: '', message: '' }); // Reset form
+            setFormData({ name: '', email: '', message: '' });
         })
         .catch(() => {
             alert("Oops! Something went wrong. Please try again.")
