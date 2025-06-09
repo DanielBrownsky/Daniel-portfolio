@@ -13,9 +13,12 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               <a href="#home" className="font-mono text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent navbar">
                 Daniel <span className="text-0"> Brownsky</span>
               </a>
-              <div onClick={() => setMenuOpen((prev) => !prev)} className="w-7 h-5 relative cursor-pointer z-40 md:hidden font-bold">
-                &#9776;
-              </div>
+              {!menuOpen && (
+                <div onClick={() => setMenuOpen(true)} className="w-7 h-8 text-[24px] relative cursor-pointer z-40 md:hidden font-bold">
+                  &#9776;
+                </div>
+              )}
+
 
               <div className="hidden md:flex items-center space-x-8 text-xl">
                 <a href="#home" className="text-gray-300 hover:text-white transition-colors">
