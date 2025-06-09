@@ -14,7 +14,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                 Daniel <span className="text-0"> Brownsky</span>
               </a>
               {!menuOpen && (
-                <div onClick={() => setMenuOpen(true)} className="w-7 h-8 text-[24px] relative cursor-pointer z-40 md:hidden font-bold">
+                <div onClick={() => setMenuOpen(true)} className="w-7 h-8 text-[20px] relative cursor-pointer z-40 md:hidden font-bold">
                   &#9776;
                 </div>
               )}
