@@ -32,7 +32,31 @@ export const Project = () => {
                                     </a>
                                 </div>
                             </div>
+                        </div><div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
+                        <h3 className="text-xl font-bold mb-2">CampusPlug</h3>
+                        <p className="mb-2">CampusPlug is a web-based campus marketplace that connects students within Nigerian universities to buy and sell items seamlessly. From textbooks and gadgets to food and fashion, it offers a streamlined platform where students can explore listings, post products, and engage in safe, local peer-to-peer transactions — all within their school ecosystem.</p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {["React", "Typescript", "TailwindCSS", "LocalStorage" ].map((tech, index) => (
+                                <span key={index} className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm  inline-block mt-4">
+                                    {tech}
+                                </span>
+                            ))}
                         </div>
+                        <div className="flex flex-col">
+                                <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors my-4">
+                                    View project 
+                                </a>
+                                <div className="flex justify-between items-center ">
+                                    <a href="https://campus-plug.vercel.app" target="_blank" className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors">
+                                        <FiExternalLink /> Live Demo
+                                    </a>
+                                    <a href="https://github.com/DanielBrownsky/CampusPlug.git" target="_blank" className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors">
+                                        <FaGithub /> Github
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
                         <h3 className="text-xl font-bold mb-2">To-Do list app</h3>
                         <p className="mb-2">A task manager app designed for simplicity and productivity. Features include snooze functionality for overdue tasks, custom alerts, and animated task completion.</p>

@@ -8,6 +8,7 @@ export const About = () => {
         "CSS",
         "JavaScript",
         "React",
+        "TypeScript",
         "Tailwind CSS",
      ]
     return (
