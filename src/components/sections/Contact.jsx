@@ -41,7 +41,6 @@ export const Contact = () => {
           Get in Touch
         </h2>
         <div className="flex flex-col-reverse md:flex-row w-full max-w-6xl mx-auto gap-12">
-          {/* Left: Social Info */}
           <div className="md:w-1/2 w-full text-white space-y-6">
             <h3 className="text-2xl font-bold">Every idea deserves to shine.</h3>
             <p className="text-gray-300">
