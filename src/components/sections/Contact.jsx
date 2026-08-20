@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { ReviewOnScroll } from "../ReviewOnScroll";
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
@@ -16,14 +16,17 @@ export const Contact = () => {
     publicKey: import.meta.env.VITE_PUBLIC_KEY,
   };
 
+  useEffect(() => {
+    emailjs.init(emailJsConfig.publicKey);
+  }, [emailJsConfig.publicKey]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     emailjs.sendForm(
       emailJsConfig.serviceId,
       emailJsConfig.templateId,
-      e.target,
-      emailJsConfig.publicKey
+      e.target
     )
       .then(() => {
         alert("Message sent successfully!");
@@ -47,7 +50,7 @@ export const Contact = () => {
             <h3 className="text-2xl font-bold">Every idea deserves to shine.</h3>
 
             <p className="text-gray-300">
-              If it’s in your heart, let’s shape it into something real — with purpose,
+              If it's in your heart, let's shape it into something real — with purpose,
               passion, and clean code.
             </p>
 
