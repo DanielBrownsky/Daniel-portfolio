@@ -11,7 +11,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         <div className="max-w-5xl mx-auto px-4">
             <div className="flex justify-between items-center h-16">
               <a href="#home" className="font-mono text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent navbar">
-                Daniel <span className="text-0"> Brownsky</span>
+                Ayeku Daniel
               </a>
               {!menuOpen && (
                 <div onClick={() => setMenuOpen(true)} className="w-7 h-8 text-[20px] relative cursor-pointer z-40 md:hidden font-bold">
