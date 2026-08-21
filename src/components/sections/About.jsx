@@ -2,13 +2,13 @@ import { ReviewOnScroll } from "../ReviewOnScroll";
 
 export const About = () => {
     const frontendSkills = [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
         "HTML",
         "CSS",
         "JavaScript",
-        "TypeScript",
-        "React",
-        "Next.js",
-        "Tailwind CSS",
     ];
 
     const backendSkills = [
@@ -32,45 +32,37 @@ export const About = () => {
             className="min-h-screen flex items-center justify-center py-20"
         >
             <ReviewOnScroll>
-                <div className="max-w-3xl mx-auto px-4">
+                <div className="max-w-4xl mx-auto px-4">
 
                     {/* About Heading */}
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-                        About Me
+                    <h2 className="text-3xl font-bold mb-8 text-white">
+                        About
                     </h2>
 
-                    {/* About Introduction */}
-                    <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-                        <p className="text-gray-300 leading-relaxed mb-6">
-                            I'm a frontend developer focused on building modern,
-                            responsive, and user-centered web applications. I work
-                            primarily with React and Next.js, using TypeScript and
-                            Tailwind CSS to create scalable and intuitive interfaces.
-                            I've also worked with Supabase, PostgreSQL, APIs,
-                            authentication, and database security while building
-                            real-world applications.
+                    {/* Main Narrative */}
+                    <div className="mb-12">
+                        <p className="text-gray-300 leading-relaxed text-lg max-w-3xl">
+                            I'm a developer who learned by building real products. I started with frontend development, where I became interested in creating interfaces that people can actually use, but building larger applications pushed me to understand what happens behind the interface. How data flows, how authentication works, and how the different pieces of an application connect. That led me into full-stack development with React, Next.js, TypeScript, and Supabase. These days, I approach projects by understanding the problem first, then figuring out what needs to be built and which tools make sense for it.
                         </p>
+                    </div>
 
-                        <p className="text-gray-300 leading-relaxed">
-                            I enjoy turning ideas into functional products, solving
-                            problems through code, and continuously improving my skills
-                            by building and exploring new technologies.
-                        </p>
+                    {/* Skills */}
+                    <div className="mb-12">
+                        <h3 className="text-xl font-semibold mb-6 text-gray-200">
+                            Skills
+                        </h3>
 
-                        {/* Skills */}
-                        <div className="flex flex-col gap-6 mt-8">
-
+                        <div className="space-y-6">
                             {/* Frontend */}
-                            <div className="rounded-xl p-6 hover:translate-y-1 transition-all">
-                                <h3 className="text-2xl font-bold mb-4">
+                            <div>
+                                <h4 className="text-sm font-medium mb-3 text-gray-400 uppercase tracking-wide">
                                     Frontend
-                                </h3>
-
-                                <div className="flex flex-wrap gap-4">
+                                </h4>
+                                <div className="flex flex-wrap gap-3">
                                     {frontendSkills.map((tech, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-lg hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                            className="bg-blue-500/5 text-blue-400 py-1.5 px-4 rounded-lg text-sm border border-blue-500/10"
                                         >
                                             {tech}
                                         </span>
@@ -78,17 +70,16 @@ export const About = () => {
                                 </div>
                             </div>
 
-                            {/* Backend & Database */}
-                            <div className="rounded-xl p-6 hover:translate-y-1 transition-all">
-                                <h3 className="text-2xl font-bold mb-4">
-                                    Backend & Database
-                                </h3>
-
-                                <div className="flex flex-wrap gap-4">
+                            {/* Backend & Data */}
+                            <div>
+                                <h4 className="text-sm font-medium mb-3 text-gray-400 uppercase tracking-wide">
+                                    Backend & Data
+                                </h4>
+                                <div className="flex flex-wrap gap-3">
                                     {backendSkills.map((tech, key) => (
                                         <span
                                             key={key}
-                                            className="bg-cyan-500/10 text-cyan-400 py-1 px-3 rounded-full text-lg hover:bg-cyan-500/20 hover:shadow-[0_2px_8px_rgba(34,211,238,0.2)] transition"
+                                            className="bg-cyan-500/5 text-cyan-400 py-1.5 px-4 rounded-lg text-sm border border-cyan-500/10"
                                         >
                                             {tech}
                                         </span>
@@ -96,17 +87,16 @@ export const About = () => {
                                 </div>
                             </div>
 
-                            {/* Tools & Platforms */}
-                            <div className="rounded-xl p-6 hover:translate-y-1 transition-all">
-                                <h3 className="text-2xl font-bold mb-4">
-                                    Tools & Platforms
-                                </h3>
-
-                                <div className="flex flex-wrap gap-4">
+                            {/* Tools & Workflow */}
+                            <div>
+                                <h4 className="text-sm font-medium mb-3 text-gray-400 uppercase tracking-wide">
+                                    Tools & Workflow
+                                </h4>
+                                <div className="flex flex-wrap gap-3">
                                     {toolsSkills.map((tech, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-lg hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                            className="bg-blue-500/5 text-blue-400 py-1.5 px-4 rounded-lg text-sm border border-blue-500/10"
                                         >
                                             {tech}
                                         </span>
@@ -116,88 +106,63 @@ export const About = () => {
                         </div>
                     </div>
 
-                    {/* Education & Experience */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    {/* Education & Featured Work */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                         {/* Education */}
-                        <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">
+                        <div>
+                            <h3 className="text-xl font-semibold mb-4 text-gray-200">
                                 Education
                             </h3>
 
                             <div>
-                                <h4 className="text-lg font-semibold mb-2">
-                                    B.Sc. in Computer Science
+                                <h4 className="text-lg font-medium mb-1 text-white">
+                                    B.Sc. Computer Science
                                 </h4>
 
                                 <p className="text-gray-300 mb-1">
                                     Olusegun Agagu University of Science and Technology
                                 </p>
 
-                                <p className="text-sm italic text-gray-400 mb-4">
-                                    2023 - 2026
-                                </p>
-
-                                <p className="text-gray-300 leading-relaxed">
-                                    Completed my degree in Computer Science with a focus
-                                    on software development and frontend engineering.
-                                    I apply my academic knowledge through practical
-                                    projects, building responsive web applications and
-                                    exploring modern technologies to solve real-world
-                                    problems.
+                                <p className="text-sm text-gray-400">
+                                    2022 to 2026
                                 </p>
                             </div>
                         </div>
 
-                        {/* Experience */}
-                        <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">
-                                Experience
+                        {/* Featured Work */}
+                        <div>
+                            <h3 className="text-xl font-semibold mb-4 text-gray-200">
+                                Featured Work
                             </h3>
 
                             {/* Alumni Connect */}
-                            <div>
-                                <h4 className="text-lg font-semibold mb-2">
-                                    Frontend Developer - Alumni Connect
+                            <div className="mb-6">
+                                <h4 className="text-lg font-medium mb-1 text-white">
+                                    Alumni Connect
                                 </h4>
 
-                                <p className="text-gray-300 mb-1">
+                                <p className="text-sm text-gray-400 mb-2">
                                     Final Year Project
                                 </p>
 
-                                <p className="text-sm italic text-gray-400 mb-4">
-                                    2026
-                                </p>
-
-                                <p className="text-gray-300 leading-relaxed">
-                                    Designed and developed a full-featured platform that
-                                    helps students connect with alumni for mentorship,
-                                    discover job opportunities, and stay connected with
-                                    their university community. Built with Next.js,
-                                    TypeScript, Tailwind CSS, and Supabase.
+                                <p className="text-gray-300 text-sm leading-relaxed">
+                                    A platform that helps students connect with alumni for mentorship, discover job opportunities, and stay connected with their university community. Built with Next.js, TypeScript, Tailwind CSS, and Supabase.
                                 </p>
                             </div>
 
                             {/* KampusPlug */}
-                            <div className="mt-6">
-                                <h4 className="text-lg font-semibold mb-2">
-                                    Frontend Developer - KampusPlug
+                            <div>
+                                <h4 className="text-lg font-medium mb-1 text-white">
+                                    KampusPlug
                                 </h4>
 
-                                <p className="text-gray-300 mb-1">
-                                    Personal Project
+                                <p className="text-sm text-gray-400 mb-2">
+                                    Collaborative Project
                                 </p>
 
-                                <p className="text-sm italic text-gray-400 mb-4">
-                                    2026
-                                </p>
-
-                                <p className="text-gray-300 leading-relaxed">
-                                    Built a student marketplace that allows users to
-                                    discover and explore products and services within
-                                    their campus community. Developed the interface
-                                    using Next.js, TypeScript, and Tailwind CSS with a
-                                    focus on responsive design and user experience.
+                                <p className="text-gray-300 text-sm leading-relaxed">
+                                    A student marketplace that allows users to discover and explore products and services within their campus community. Worked on the frontend interface using Next.js, TypeScript, and Tailwind CSS as part of a collaborative team.
                                 </p>
                             </div>
                         </div>
