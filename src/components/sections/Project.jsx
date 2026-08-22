@@ -7,127 +7,60 @@ export const Project = () => {
         <section id="project" className="min-h-screen flex items-center justify-center py-20">
             <ReviewOnScroll>
                 <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-                        Featured Projects
+                    <h2 className="text-3xl font-bold mb-12 text-white">
+                        Projects
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Featured Projects */}
+                    <div className="space-y-8 mb-16">
 
-                        {/* SIWES TRACKER */}
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">SIWES TRACKER</h3>
+                        {/* Alumni Connect - Featured */}
+                        <div className="p-8 rounded-2xl border border-blue-500/20 bg-blue-500/5 hover:border-blue-500/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                            <div className="mb-4">
+                                <span className="text-xs font-medium text-blue-400 uppercase tracking-wide mb-2 block">
+                                    Final Year Project
+                                </span>
+                                <h3 className="text-2xl font-bold text-white mb-2">
+                                    Alumni Connect
+                                </h3>
+                            </div>
 
-                            <p className="mb-2">
-                                A web app built to help students track their industrial
-                                training progress. Users can log daily activities, view
-                                summaries, and stay organized throughout their SIWES journey.
-                                Built with a responsive and intuitive dashboard.
+                            <p className="text-gray-300 leading-relaxed mb-4 max-w-3xl">
+                                Alumni Connect connects students with alumni for mentorship, career opportunities, and continued university engagement. The platform includes role-based authentication, profiles, mentorship requests, job postings, applications, and real-time activity.
                             </p>
 
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["React", "CSS", "LocalStorage"].map((tech, index) => (
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                {["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"].map((tech, index) => (
                                     <span
                                         key={index}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm mr-2 mb- inline-block mt-"
+                                        className="bg-blue-500/10 text-blue-400 py-1.5 px-3 rounded-lg text-sm border border-blue-500/10 font-medium"
                                     >
                                         {tech}
                                     </span>
                                 ))}
                             </div>
 
-                            <div className="flex justify-between items-center">
-                                <a
-                                    href="https://siwes-tracker-xlxt.vercel.app/"
-                                    target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
-                                >
-                                    <FiExternalLink /> Live Demo
-                                </a>
-
-                                <a
-                                    href="https://github.com/DanielBrownsky/siwes-tracker.git"
-                                    target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
-                                >
-                                    <FaGithub /> Github
-                                </a>
-                            </div>
-                        </div>
-
-
-                        {/* KAMPUSPLUG */}
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">KampusPlug</h3>
-
-                            <p className="mb-2">
-                                KampusPlug is a web-based campus marketplace that connects
-                                students within Nigerian universities to buy and sell items
-                                seamlessly. From textbooks and gadgets to food and fashion,
-                                it provides a streamlined platform where students can
-                                explore listings, post products, and engage in local
-                                peer-to-peer transactions within their school ecosystem.
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Next.js", "TypeScript", "Tailwind CSS"].map((tech, index) => (
-                                    <span
-                                        key={index}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm inline-block mt-4"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
+                            <div className="mb-6">
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
+                                    Engineering Highlights
+                                </p>
+                                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-400">
+                                    <span>Role-based authentication</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>PostgreSQL data modeling</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Row Level Security</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Real-time updates</span>
+                                </div>
                             </div>
 
-                            <div className="flex justify-between items-center">
-                                <a
-                                    href="https://www.kampusplug.com/"
-                                    target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
-                                >
-                                    <FiExternalLink /> Live Demo
-                                </a>
-
-                                <a
-                                    href="https://github.com/Skywonda/kampusplug.git"
-                                    target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
-                                >
-                                    <FaGithub /> Github
-                                </a>
-                            </div>
-                        </div>
-
-
-                        {/* ALUMNI CONNECT */}
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">Alumni Connect</h3>
-
-                            <p className="mb-2">
-                                Alumni Connect is a platform designed to help students
-                                connect with alumni for mentorship, discover job
-                                opportunities, and stay connected with their university
-                                community. It includes authentication, profiles,
-                                mentorship requests, job postings, applications, and
-                                real-time dashboard features.
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Next.js", "TypeScript", "Tailwind CSS", "Supabase"].map((tech, index) => (
-                                    <span
-                                        key={index}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm inline-block mt-4"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <div className="flex justify-between items-center">
+                            <div className="flex gap-3">
                                 <a
                                     href="https://alumni-connect-beta-five.vercel.app/"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 bg-blue-500 text-white py-2.5 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                                 >
                                     <FiExternalLink /> Live Demo
                                 </a>
@@ -135,86 +68,182 @@ export const Project = () => {
                                 <a
                                     href="https://github.com/DanielBrownsky/Alumni-connect.git"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white py-2.5 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                                 >
-                                    <FaGithub /> Github
+                                    <FaGithub /> GitHub
                                 </a>
                             </div>
                         </div>
 
+                        {/* KampusPlug - Featured */}
+                        <div className="p-8 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                            <div className="mb-4">
+                                <span className="text-xs font-medium text-cyan-400 uppercase tracking-wide mb-2 block">
+                                    Collaborative Project
+                                </span>
+                                <h3 className="text-2xl font-bold text-white mb-2">
+                                    KampusPlug
+                                </h3>
+                            </div>
 
-                        {/* TO-DO LIST */}
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">To-Do list app</h3>
-
-                            <p className="mb-2">
-                                A task manager app designed for simplicity and productivity.
-                                Features include snooze functionality for overdue tasks,
-                                custom alerts, and animated task completion.
+                            <p className="text-gray-300 leading-relaxed mb-4 max-w-3xl">
+                                KampusPlug is a campus marketplace built to help students across Nigerian universities buy and sell within their school communities. I contributed to the product as part of a collaborative team of developers and designers, working on a production-oriented Next.js application designed for real users.
                             </p>
 
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["React", "CSS", "LocalStorage"].map((tech, index) => (
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                {["Next.js", "TypeScript", "Tailwind CSS"].map((tech, index) => (
                                     <span
                                         key={index}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm inline-block mt-4"
+                                        className="bg-cyan-500/10 text-cyan-400 py-1.5 px-3 rounded-lg text-sm border border-cyan-500/10 font-medium"
                                     >
                                         {tech}
                                     </span>
                                 ))}
                             </div>
 
-                            <div className="flex justify-between items-center">
+                            <div className="mb-6">
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
+                                    Engineering Highlights
+                                </p>
+                                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-400">
+                                    <span>Collaborative development</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Responsive UI</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Reusable components</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>TypeScript</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Product-focused development</span>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-3">
                                 <a
-                                    href="https://DanielBrownsky.github.io/to-do-list"
+                                    href="https://www.kampusplug.com/"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 bg-cyan-500 text-white py-2.5 px-6 rounded-lg font-medium hover:bg-cyan-600 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
                                 >
                                     <FiExternalLink /> Live Demo
                                 </a>
 
                                 <a
-                                    href="https://github.com/DanielBrownsky/to-do-list.git"
+                                    href="https://github.com/Skywonda/kampusplug.git"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white py-2.5 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
                                 >
-                                    <FaGithub /> Github
+                                    <FaGithub /> GitHub
                                 </a>
                             </div>
                         </div>
 
+                    </div>
 
-                        {/* DB GYM FIT */}
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">
-                                DB-Gym-Fit – Interactive Workout Generator
+                    {/* Other Projects */}
+                    <h3 className="text-xl font-semibold mb-6 text-gray-200">
+                        Other Projects
+                    </h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+                        {/* SIWES TRACKER */}
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-blue-500/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                            <h3 className="text-lg font-bold text-white mb-3">
+                                SIWES Tracker
                             </h3>
 
-                            <p className="mt-2">
-                                DB-Gym-Fit is a fully custom-built React application that
-                                generates personalized workout plans with zero reliance on
-                                external APIs. Designed with a bold, humorous tone and a clean
-                                user experience, it guides users through a 3-step process to
-                                craft the perfect workout based on training style, targeted
-                                muscle groups, and fitness goals.
+                            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                Students track industrial training progress with daily activity logging and progress summaries.
                             </p>
 
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["React", "Javascript", "TailwindCSS", "HTML/CSS"].map((tech, index) => (
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                {["React", "CSS", "LocalStorage"].map((tech, index) => (
                                     <span
                                         key={index}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm inline-block mt-6"
+                                        className="bg-blue-500/5 text-blue-400 py-1 px-3 rounded-lg text-xs border border-blue-500/10 font-medium"
                                     >
                                         {tech}
                                     </span>
                                 ))}
                             </div>
 
-                            <div className="flex justify-between items-center">
+                            <div className="mb-5">
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
+                                    Engineering Highlights
+                                </p>
+                                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-400">
+                                    <span>LocalStorage persistence</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>State management</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Responsive dashboard</span>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-3">
+                                <a
+                                    href="https://siwes-tracker-xlxt.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
+                                >
+                                    <FiExternalLink /> Live Demo
+                                </a>
+
+                                <a
+                                    href="https://github.com/DanielBrownsky/siwes-tracker.git"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
+                                >
+                                    <FaGithub /> GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* DB-Gym-Fit */}
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-blue-500/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                            <h3 className="text-lg font-bold text-white mb-3">
+                                DB-Gym-Fit
+                            </h3>
+
+                            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                Custom workout generator creating personalized routines based on training style and fitness goals.
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                {["React", "JavaScript", "TailwindCSS", "HTML/CSS"].map((tech, index) => (
+                                    <span
+                                        key={index}
+                                        className="bg-blue-500/5 text-blue-400 py-1 px-3 rounded-lg text-xs border border-blue-500/10 font-medium"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="mb-5">
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
+                                    Engineering Highlights
+                                </p>
+                                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-400">
+                                    <span>Dynamic workout generation</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Custom filtering logic</span>
+                                    <span className="text-gray-600">·</span>
+                                    <span>Responsive UI</span>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-3">
                                 <a
                                     href="https://db-gym-fit.vercel.app/"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
                                 >
                                     <FiExternalLink /> Live Demo
                                 </a>
@@ -222,43 +251,46 @@ export const Project = () => {
                                 <a
                                     href="https://github.com/DanielBrownsky/DB-Gym-Fit.git"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
                                 >
-                                    <FaGithub /> Github
+                                    <FaGithub /> GitHub
                                 </a>
                             </div>
                         </div>
 
+                    </div>
 
-                        {/* NASA APOD */}
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">
+                    {/* Secondary Projects */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        {/* NASA APOD Viewer */}
+                        <div className="p-5 rounded-xl border border-white/5 hover:border-white/10 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                            <h3 className="text-base font-bold text-white mb-3">
                                 NASA APOD Viewer
                             </h3>
 
-                            <p className="mt-2">
-                                A sleek and interactive web app that fetches and displays
-                                NASA's Astronomy Picture of the Day using their public API.
-                                Users can explore daily space images, read NASA's detailed
-                                descriptions, and even search for specific dates.
+                            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                Displays NASA's Astronomy Picture of the Day with search functionality and detailed descriptions.
                             </p>
 
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["React", "Javascript", "CSS", "NASA Open API"].map((tech, index) => (
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                {["React", "JavaScript", "CSS", "NASA API"].map((tech, index) => (
                                     <span
                                         key={index}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm inline-block mt-6"
+                                        className="bg-blue-500/5 text-blue-400 py-1 px-3 rounded-lg text-xs border border-blue-500/10 font-medium"
                                     >
                                         {tech}
                                     </span>
                                 ))}
                             </div>
 
-                            <div className="flex justify-between items-center">
+                            <div className="flex gap-3">
                                 <a
                                     href="https://nasa-apod-rho.vercel.app/"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
                                 >
                                     <FiExternalLink /> Live Demo
                                 </a>
@@ -266,9 +298,52 @@ export const Project = () => {
                                 <a
                                     href="https://github.com/DanielBrownsky/nasa-apod.git"
                                     target="_blank"
-                                    className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
                                 >
-                                    <FaGithub /> Github
+                                    <FaGithub /> GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* To-Do List App */}
+                        <div className="p-5 rounded-xl border border-white/5 hover:border-white/10 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                            <h3 className="text-base font-bold text-white mb-3">
+                                To-Do List App
+                            </h3>
+
+                            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                Task manager with snooze functionality, custom alerts, and animated completion for productivity tracking.
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                {["React", "CSS", "LocalStorage"].map((tech, index) => (
+                                    <span
+                                        key={index}
+                                        className="bg-blue-500/5 text-blue-400 py-1 px-3 rounded-lg text-xs border border-blue-500/10 font-medium"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="flex gap-3">
+                                <a
+                                    href="https://DanielBrownsky.github.io/to-do-list"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
+                                >
+                                    <FiExternalLink /> Live Demo
+                                </a>
+
+                                <a
+                                    href="https://github.com/DanielBrownsky/to-do-list.git"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
+                                >
+                                    <FaGithub /> GitHub
                                 </a>
                             </div>
                         </div>
