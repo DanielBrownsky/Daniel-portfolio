@@ -1,43 +1,41 @@
 import { useEffect, useRef } from "react"
+import { site } from "../data/site"
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
-  const menuRef = useRef(null);
-  const firstLinkRef = useRef(null);
-  const closeButtonRef = useRef(null);
+  const menuRef = useRef(null)
+  const firstLinkRef = useRef(null)
+  const closeButtonRef = useRef(null)
 
-  // Focus management when menu opens/closes
   useEffect(() => {
     if (menuOpen) {
-      // Focus first link when menu opens
       setTimeout(() => {
-        firstLinkRef.current?.focus();
-      }, 100);
+        firstLinkRef.current?.focus()
+      }, 100)
     }
-  }, [menuOpen]);
+  }, [menuOpen])
 
-  // Handle escape key to close menu
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape" && menuOpen) {
-        setMenuOpen(false);
+        setMenuOpen(false)
       }
-    };
+    }
 
     if (menuOpen) {
-      document.addEventListener("keydown", handleEscape);
+      document.addEventListener("keydown", handleEscape)
     }
 
     return () => {
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [menuOpen, setMenuOpen]);
+      document.removeEventListener("keydown", handleEscape)
+    }
+  }, [menuOpen, setMenuOpen])
 
   const navItems = [
-    { id: "home", label: "Home" },
+    { id: "project", label: "Work" },
     { id: "about", label: "About" },
-    { id: "project", label: "Project" },
-    { id: "contact", label: "Contact" }
-  ];
+    { id: "resume", label: "Résumé", external: true, disabled: !site.resumeUrl },
+    { id: "contact", label: "Let's Talk", external: true },
+  ]
 
   return (
     <div
@@ -45,13 +43,20 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       id="mobile-menu"
       role="navigation"
       aria-label="Main navigation"
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.95)] backdrop-blur-lg z-40 flex flex-col items-center justify-center transition-all duration-300 ease-in-out
-        ${menuOpen ? "h-screen opacity-100 pointer-events-auto" : "h-0 opacity-0 pointer-events-none"}`}
+      className="fixed top-0 left-0 w-full z-40 flex flex-col items-center justify-center transition-all duration-300 ease-in-out"
+      style={{
+        backgroundColor: 'rgba(12, 12, 12, 0.98)',
+        backdropFilter: 'blur(12px)',
+        height: menuOpen ? '100vh' : '0',
+        opacity: menuOpen ? 1 : 0,
+        pointerEvents: menuOpen ? 'auto' : 'none'
+      }}
     >
       <button
         ref={closeButtonRef}
         onClick={() => setMenuOpen(false)}
-        className="absolute top-5 right-6 w-10 h-10 flex items-center justify-center text-white hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded"
+        className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center transition-colors rounded"
+        style={{ color: 'var(--color-text-primary)' }}
         aria-label="Close menu"
       >
         <svg
@@ -70,21 +75,52 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         </svg>
       </button>
 
-      {navItems.map((item, index) => (
-        <a
-          key={item.id}
-          ref={index === 0 ? firstLinkRef : null}
-          href={`#${item.id}`}
-          onClick={() => setMenuOpen(false)}
-          className={`text-2xl font-medium text-white my-4 transform transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded px-4 py-2
-            ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-          style={{
-            transitionDelay: menuOpen ? `${index * 100}ms` : "0ms"
-          }}
-        >
-          {item.label}
-        </a>
-      ))}
+      <div className="flex flex-col items-center space-y-6">
+        {navItems.map((item, index) => {
+          if (item.disabled) {
+            return (
+              <span
+                key={item.id}
+                className="text-2xl font-medium transition-all duration-300 rounded px-4 py-2"
+                style={{
+                  color: 'var(--color-text-muted)',
+                  cursor: 'not-allowed',
+                  opacity: menuOpen ? 1 : 0,
+                  transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
+                  transitionDelay: menuOpen ? `${index * 50}ms` : "0ms"
+                }}
+              >
+                {item.label}
+              </span>
+            )
+          }
+
+          return (
+            <a
+              key={item.id}
+              ref={index === 0 ? firstLinkRef : null}
+              href={item.external ? (item.id === 'resume' ? '#' : `#${item.id}`) : `#${item.id}`}
+              target={item.external && item.id !== 'resume' ? "_blank" : undefined}
+              rel={item.external && item.id !== 'resume' ? "noopener noreferrer" : undefined}
+              onClick={() => setMenuOpen(false)}
+              className="text-2xl font-medium transition-all duration-300 rounded px-4 py-2 group"
+              style={{
+                color: 'var(--color-text-primary)',
+                opacity: menuOpen ? 1 : 0,
+                transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: menuOpen ? `${index * 50}ms` : "0ms"
+              }}
+            >
+              {item.label}
+              {item.external && (
+                <span className="inline-block ml-1 transform transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  ↗
+                </span>
+              )}
+            </a>
+          )
+        })}
+      </div>
     </div>
   )
 }

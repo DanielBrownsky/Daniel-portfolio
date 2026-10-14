@@ -1,65 +1,112 @@
-import { ReviewOnScroll } from "../ReviewOnScroll"
+import { useEffect, useState, useRef } from "react"
+import { site } from "../../data/site"
+import { AvailabilityStatus } from "../ui/AvailabilityStatus"
 
 export const Home = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const heroRef = useRef(null)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 300)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <section id="home" className="min-h-[85vh] flex items-center justify-center relative pt-20 sm:pt-0 bg-black">
-      <ReviewOnScroll>
-        <div className="max-w-6xl mx-auto px-4 w-full">
-          <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
-            
-            {/* Left: Content Area */}
-            <div className="md:w-3/5 w-full text-center md:text-left z-10">
-              {/* Name */}
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-200 mb-6 tracking-wide">
-                Ayeku Daniel
-              </h2>
+    <section
+      id="home"
+      ref={heroRef}
+      className="min-h-screen flex items-center pt-20 md:pt-24"
+      style={{ backgroundColor: 'var(--color-bg)' }}
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+        {/* LEVEL 1: Identity */}
+        <div
+          className="mb-8 transition-all duration-700 ease-out"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          }}
+        >
+          <p
+            className="text-sm md:text-base font-medium tracking-wide uppercase"
+            style={{ color: 'var(--color-text-muted)' }}
+          >
+            {site.name} • {site.role}
+          </p>
+        </div>
 
-              {/* Main Headline - Strongest Visual Weight */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                I build digital products that solve real problems.
-              </h1>
+        {/* LEVEL 2: Dominant Headline */}
+        <h1
+          className="mb-12 leading-[1.08] tracking-tight transition-all duration-700 ease-out"
+          style={{
+            fontSize: 'clamp(2.5rem, 8vw + 1rem, 6rem)',
+            color: 'var(--color-text-primary)',
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            transitionDelay: '100ms',
+          }}
+        >
+          {site.tagline}
+        </h1>
 
-              {/* Supporting Copy */}
-              <p className="text-gray-400 text-base md:text-lg mb-8 max-w-2xl">
-                I build modern web products across the frontend and backend, turning real-world problems into responsive, functional solutions people can actually use.
+        {/* LEVEL 3: Supporting Information */}
+        <div
+          className="border-t transition-all duration-700 ease-out"
+          style={{
+            borderColor: 'var(--color-border-subtle)',
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            transitionDelay: '200ms',
+          }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-12">
+            {/* Left: Paragraph and CTAs */}
+            <div className="lg:col-span-8">
+              <p
+                className="mb-8 leading-relaxed max-w-3xl"
+                style={{
+                  fontSize: 'clamp(1.125rem, 1.5vw + 0.75rem, 1.375rem)',
+                  color: 'var(--color-text-secondary)',
+                }}
+              >
+                {site.heroDescription}
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
                 <a
                   href="#project"
-                  className="w-full sm:w-auto bg-blue-500 text-white py-3 px-8 rounded font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] text-center"
+                  className="inline-flex items-center gap-2 text-base font-medium transition-colors duration-150 group"
+                  style={{ color: 'var(--color-text-primary)' }}
                 >
-                  View My Work
+                  View my work
+                  <span className="transform transition-transform duration-150 group-hover:translate-y-0.5">
+                    ↓
+                  </span>
                 </a>
-
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto border border-blue-500/50 text-blue-400 py-3 px-8 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 text-center"
+                  className="inline-flex items-center gap-2 text-base font-medium transition-colors duration-150 group"
+                  style={{ color: 'var(--color-text-primary)' }}
                 >
-                  Let's Connect
+                  Let's talk
+                  <span className="transform transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    ↗
+                  </span>
                 </a>
               </div>
             </div>
 
-            {/* Right: Photograph Area */}
-            <div className="md:w-2/5 w-full flex justify-center md:justify-end">
-              <div className="relative">
-                <div className="w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 lg:w-96 lg:h-[30rem] rounded-2xl overflow-hidden border-2 border-blue-500/8 shadow-[0_0_12px_rgba(59,130,246,0.06)]">
-                  <img
-                    src="/hero-photo.jpeg"
-                    alt="Ayeku Daniel"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                {/* Subtle glow behind photo */}
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-blue-500/3 to-purple-500/3 blur-md -z-10"></div>
-              </div>
+            {/* Right: Availability/Location */}
+            <div className="lg:col-span-4 lg:pt-2">
+              <AvailabilityStatus
+                status={`Based in ${site.location} • Open to remote opportunities`}
+              />
             </div>
-
           </div>
         </div>
-      </ReviewOnScroll>
+      </div>
     </section>
   )
 }

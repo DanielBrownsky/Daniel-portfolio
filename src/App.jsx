@@ -11,14 +11,14 @@ import { Contact } from './components/sections/Contact';
 
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
- 
+
   return (
     <>
-    {!loading && <LoadingScreen  onComplete={() => setLoading(true)}/>}
+      {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
 
-      <div className={`min-h-screen transition-opacity duration-700 ${loading ? "opacity-100" : "opacity-0"} bg-black text-gray-200`}>
+      <div className={`min-h-screen transition-opacity duration-700 ${loading ? "opacity-0" : "opacity-100"}`} style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text-primary)' }}>
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
