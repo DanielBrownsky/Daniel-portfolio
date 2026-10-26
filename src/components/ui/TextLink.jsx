@@ -1,4 +1,4 @@
-export const TextLink = ({ href, children, external = false, className = "" }) => {
+export const TextLink = ({ href, children, external = false, className = "", showArrow = true }) => {
   return (
     <a
       href={href}
@@ -8,9 +8,11 @@ export const TextLink = ({ href, children, external = false, className = "" }) =
       style={{ color: 'var(--color-text-primary)' }}
     >
       {children}
-      <span className="transform transition-transform duration-150 group-hover:translate-x-1 group-hover:-translate-y-1">
-        ↗
-      </span>
+      {showArrow && (
+        <span className="transform transition-transform duration-150 group-hover:translate-x-1 group-hover:-translate-y-1">
+          ↗
+        </span>
+      )}
     </a>
   );
 };

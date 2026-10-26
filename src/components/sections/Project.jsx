@@ -4,7 +4,7 @@ import { FiExternalLink } from "react-icons/fi"
 import { projects } from "../../data/projects"
 
 export const Project = () => {
-    const featuredProjects = projects.filter(p => p.featured);
+    const featuredProjects = projects.filter(p => p.featured && p.id !== "kampusplug");
     const otherProjects = projects.filter(p => p.category === "other");
     const secondaryProjects = projects.filter(p => p.category === "secondary");
 

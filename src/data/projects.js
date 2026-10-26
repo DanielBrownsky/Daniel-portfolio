@@ -41,6 +41,19 @@ export const projects = [
     status: "live",
     image: null,
     images: [],
+    // Showcase-specific content
+    showcase: {
+      eyebrow: "SELECTED WORK / 01",
+      fullDescription: "KampusPlug is a campus marketplace connecting students with verified vendors, making it easier to discover products, shop and sell within their campus community.",
+      supportingCopy: "As co-founder and frontend developer, I've worked on product discovery, cart functionality, vendor wallets and withdrawal flows. I'm also building the internal Admin Dashboard that helps manage the platform.",
+      showcaseRole: "Co-founder • Frontend Developer",
+      period: "2025 → Present",
+      showcaseTech: ["Next.js", "TypeScript", "Tailwind CSS", "TanStack Query"],
+      screenshots: {
+        marketplace: "/images/kampusplug/marketplace.png",
+        admin: "/images/kampusplug/admin-campuses.png"
+      }
+    }
   },
   {
     id: "siwes-tracker",

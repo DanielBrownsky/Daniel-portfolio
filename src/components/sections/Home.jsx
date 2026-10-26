@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import { site } from "../../data/site"
 import { AvailabilityStatus } from "../ui/AvailabilityStatus"
+import { TextLink } from "../ui/TextLink"
 
 export const Home = () => {
   const [isVisible, setIsVisible] = useState(false)

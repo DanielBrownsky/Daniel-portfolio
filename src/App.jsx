@@ -4,6 +4,7 @@ import { LoadingScreen } from './components/LoadingScreen'
 import { Navbar } from './components/Navbar'
 import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/sections/Home'
+import { KampusPlugShowcase } from './components/sections/KampusPlugShowcase'
 import { About } from './components/sections/About';
 import { Project } from './components/sections/Project';
 import { Contact } from './components/sections/Contact';
@@ -23,6 +24,7 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
         <Home />
+        <KampusPlugShowcase />
         <About />
         <Project />
         <Contact />
