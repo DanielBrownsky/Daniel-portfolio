@@ -5,8 +5,8 @@ import { projects } from "../../data/projects"
 
 export const Project = () => {
     const featuredProjects = projects.filter(p => p.featured && p.id !== "kampusplug" && p.id !== "alumni-connect");
-    const otherProjects = projects.filter(p => p.category === "other");
-    const secondaryProjects = projects.filter(p => p.category === "secondary");
+    const otherProjects = projects.filter(p => p.category === "other" && p.id !== "siwes-tracker");
+    const secondaryProjects = projects.filter(p => p.category === "secondary" && p.id !== "nasa-apod");
 
     return (
         <section id="project" className="min-h-screen flex items-center justify-center py-20">

@@ -73,19 +73,25 @@ export const projects = [
     slug: "siwes-tracker",
     title: "SIWES Tracker",
     category: "other",
-    description: "Students track industrial training progress with daily activity logging and progress summaries.",
-    tech: ["React", "CSS", "LocalStorage"],
+    description: "A practical tool for students to organize industrial training logs, track their progress and stay on top of their placement.",
+    tech: ["React", "JavaScript", "LocalStorage"],
     highlights: [
       "LocalStorage persistence",
       "State management",
       "Responsive dashboard",
     ],
-    liveUrl: "https://siwes-tracker-xlxt.vercel.app/",
+    liveUrl: "https://siwes-tracker.vercel.app/",
     githubUrl: "https://github.com/DanielBrownsky/siwes-tracker.git",
     featured: false,
     status: "live",
     image: null,
     images: [],
+    // Showcase-specific content
+    showcase: {
+      description: "I built SIWES Tracker to help students manage their industrial training, organize daily logs, monitor progress and keep track of their remaining training days.",
+      tech: ["React", "JavaScript", "CSS", "LocalStorage"],
+      screenshot: "/images/projects/siwes-tracker/dashboard.png"
+    }
   },
   {
     id: "db-gym-fit",
@@ -112,7 +118,7 @@ export const projects = [
     title: "NASA APOD Viewer",
     category: "secondary",
     description: "Displays NASA's Astronomy Picture of the Day with search functionality and detailed descriptions.",
-    tech: ["React", "JavaScript", "CSS", "NASA API"],
+    tech: ["React", "JavaScript", "REST API"],
     highlights: [],
     liveUrl: "https://nasa-apod-rho.vercel.app/",
     githubUrl: "https://github.com/DanielBrownsky/nasa-apod.git",
@@ -120,6 +126,12 @@ export const projects = [
     status: "live",
     image: null,
     images: [],
+    // Showcase-specific content
+    showcase: {
+      description: "I built a React application that uses NASA's API to display the Astronomy Picture of the Day, bringing daily space imagery and information into one simple interface.",
+      tech: ["React", "JavaScript", "CSS", "NASA API"],
+      screenshot: "/images/projects/nasa-apod/home.png"
+    }
   },
   {
     id: "to-do-list",
