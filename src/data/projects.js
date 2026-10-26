@@ -19,6 +19,19 @@ export const projects = [
     status: "live",
     image: null,
     images: [],
+    // Showcase-specific content
+    showcase: {
+      eyebrow: "SELECTED WORK / 02",
+      fullDescription: "Alumni Connect is a platform connecting students and alumni through mentorship, job opportunities and professional networking, designed to keep their community connected beyond graduation.",
+      supportingCopy: "I built Alumni Connect across the stack, implementing role-based authentication, student and alumni dashboards, mentorship requests, job listings and applications, and database access controls using Supabase.",
+      showcaseRole: "Full-stack Developer",
+      period: "2026",
+      showcaseTech: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
+      screenshots: {
+        dashboard: "/images/projects/alumni-connect/dashboard.png",
+        mentorship: "/images/projects/alumni-connect/mentorship.png"
+      }
+    }
   },
   {
     id: "kampusplug",
