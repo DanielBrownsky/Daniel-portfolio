@@ -7,6 +7,7 @@ import { Home } from './components/sections/Home'
 import { KampusPlugShowcase } from './components/sections/KampusPlugShowcase'
 import { AlumniConnectShowcase } from './components/sections/AlumniConnectShowcase'
 import { OtherWork } from './components/sections/OtherWork'
+import { HowIWork } from './components/sections/HowIWork'
 import { About } from './components/sections/About';
 import { Project } from './components/sections/Project';
 import { Contact } from './components/sections/Contact';
@@ -29,6 +30,7 @@ function App() {
         <KampusPlugShowcase />
         <AlumniConnectShowcase />
         <OtherWork />
+        <HowIWork />
         <About />
         <Project />
         <Contact />
