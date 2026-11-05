@@ -1,5 +1,4 @@
 export const skills = {
-  // New structure for Toolbox section
   categories: [
     {
       id: "frontend",
@@ -40,28 +39,5 @@ export const skills = {
         "Vite"
       ]
     }
-  ],
-  // Legacy structure for backward compatibility with About.jsx
-  frontend: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "HTML",
-    "CSS",
-    "JavaScript",
-  ],
-  backend: [
-    "Supabase",
-    "PostgreSQL",
-    "REST APIs",
-    "Authentication",
-    "Row Level Security",
-  ],
-  tools: [
-    "Git",
-    "GitHub",
-    "Vercel",
-    "Vite",
-  ],
+  ]
 };
