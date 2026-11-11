@@ -1,83 +1,149 @@
-import { ReviewOnScroll } from "../ReviewOnScroll";
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
-import { socialLinks } from "../../data/socialLinks";
-import { site } from "../../data/site";
+import { useEffect, useRef } from "react"
+import { site } from "../../data/site"
+import { TextLink } from "../ui/TextLink"
 
 export const Contact = () => {
-  const getIcon = (label) => {
-    switch (label) {
-      case "Email": return <FaEnvelope className="text-lg" />;
-      case "GitHub": return <FaGithub className="text-lg" />;
-      case "LinkedIn": return <FaLinkedin className="text-lg" />;
-      case "Twitter": return <FaTwitter className="text-lg" />;
-      default: return null;
+  const sectionRef = useRef(null)
+  const eyebrowRef = useRef(null)
+  const headingRef = useRef(null)
+  const paragraphRef = useRef(null)
+  const ctaGroupRef = useRef(null)
+  const socialLinksRef = useRef(null)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    if (mediaQuery.matches) {
+      return
     }
-  };
+
+    // Setup independent reveals for all elements
+    const revealElements = [
+      { ref: eyebrowRef },
+      { ref: headingRef },
+      { ref: paragraphRef },
+      { ref: ctaGroupRef },
+      { ref: socialLinksRef },
+    ]
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = '1'
+              entry.target.style.transform = 'translateY(0)'
+            }, 0)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    revealElements.forEach(({ ref }) => {
+      if (ref.current) {
+        ref.current.style.opacity = '0'
+        ref.current.style.transform = 'translateY(18px)'
+        ref.current.style.transition = 'opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1)'
+        observer.observe(ref.current)
+      }
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section id="contact" className="min-h-screen flex flex-col items-center justify-center py-20 px-4" style={{ backgroundColor: 'var(--color-bg)' }}>
-      <ReviewOnScroll>
-        <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-          Contact
+    <section
+      ref={sectionRef}
+      id="contact"
+      className="py-16 md:py-20"
+      style={{ backgroundColor: 'var(--color-bg)' }}
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+        {/* Eyebrow */}
+        <div
+          ref={eyebrowRef}
+          className="mb-3"
+        >
+          <p
+            className="text-sm font-medium tracking-wide uppercase"
+            style={{ color: 'var(--color-text-muted)' }}
+          >
+            LET'S CONNECT / 08
+          </p>
+        </div>
+
+        {/* Heading */}
+        <h2
+          ref={headingRef}
+          className="mb-6 leading-[1.08] tracking-tight"
+          style={{
+            fontSize: 'clamp(2.25rem, 5.5vw + 1rem, 3.75rem)',
+            color: 'var(--color-text-primary)',
+          }}
+        >
+          Have something in mind? Let's talk.
         </h2>
 
-        <p className="text-center mb-16 max-w-2xl text-lg" style={{ color: 'var(--color-text-secondary)' }}>
-          I'm open to new opportunities, interesting projects, and collaborations. If you'd like to talk about my work or a role, feel free to reach out.
+        {/* Supporting paragraph */}
+        <p
+          ref={paragraphRef}
+          className="mb-12 text-base leading-relaxed max-w-2xl"
+          style={{ color: 'var(--color-text-secondary)' }}
+        >
+          I'm actively looking for frontend developer opportunities and open to remote roles, freelance projects, and collaborations. If you're building something interesting or think I'd be a good fit for your team, I'd love to hear from you.
         </p>
 
-        <div className="flex flex-col md:flex-row w-full max-w-[1400px] mx-auto gap-20">
+        {/* Divider */}
+        <div
+          ref={ctaGroupRef}
+          className="mb-8"
+          style={{ borderBottom: '1px solid var(--color-border-subtle)' }}
+        />
 
-          {/* Left: Contact via Email */}
-          <div className="md:w-[550px] w-full">
-            <div className="rounded-xl p-8" style={{ border: '1px solid var(--color-border-subtle)', backgroundColor: 'var(--color-surface)' }}>
-              <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
-                Get in Touch
-              </h3>
-
-              <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
-                The best way to reach me is directly via email. I typically respond within 24-48 hours.
-              </p>
-
-              <a
-                href={`mailto:${site.email}`}
-                className="inline-flex items-center gap-3 bg-blue-500 text-white py-4 px-8 rounded-lg font-medium transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-base"
-              >
-                <FaEnvelope className="text-xl" />
-                {site.email}
-              </a>
-            </div>
-          </div>
-
-          {/* Right: Contact/Social Links */}
-          <div className="md:w-1/2 w-full flex flex-col justify-center" style={{ color: 'var(--color-text-primary)' }}>
-            <div className="pt-8 mb-8" style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
-              <h3 className="text-2xl font-semibold mb-8">Connect</h3>
-
-              <div className="space-y-5">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="flex items-center gap-4 transition-colors group"
-                    style={{ color: 'var(--color-text-secondary)' }}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                  >
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors" style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border-subtle)' }}>
-                      {getIcon(link.label)}
-                    </div>
-                    <div>
-                      <div className="text-base font-medium">{link.label}</div>
-                      <div className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{link.display}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
+        {/* Email CTA */}
+        <div className="mb-8">
+          <TextLink
+            href={`mailto:${site.email}`}
+            className="text-lg hover:underline hover:underline-offset-4 hover:decoration-[var(--color-accent)]"
+            showArrow={false}
+          >
+            Send me an email ↗
+          </TextLink>
         </div>
-      </ReviewOnScroll>
+
+        {/* Social links */}
+        <div
+          ref={socialLinksRef}
+          className="flex flex-wrap items-center gap-6 md:gap-8"
+        >
+          <TextLink
+            href="https://github.com/DanielBrownsky"
+            external
+            className="text-base hover:underline hover:underline-offset-4 hover:decoration-[var(--color-accent)]"
+            showArrow={false}
+          >
+            GitHub ↗
+          </TextLink>
+          <TextLink
+            href="https://www.linkedin.com/in/daniel-ayeku-b5a65840a/"
+            external
+            className="text-base hover:underline hover:underline-offset-4 hover:decoration-[var(--color-accent)]"
+            showArrow={false}
+          >
+            LinkedIn ↗
+          </TextLink>
+          <TextLink
+            href="https://x.com/AyekuDaniel"
+            external
+            className="text-base hover:underline hover:underline-offset-4 hover:decoration-[var(--color-accent)]"
+            showArrow={false}
+          >
+            X (Twitter) ↗
+          </TextLink>
+        </div>
+      </div>
     </section>
-  );
-};
+  )
+}

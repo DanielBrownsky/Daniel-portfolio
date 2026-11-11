@@ -18,8 +18,8 @@ export const socialLinks = [
     external: true,
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com/@AyekuDaniel",
+    label: "X (Twitter)",
+    href: "https://x.com/AyekuDaniel",
     display: "@AyekuDaniel",
     external: true,
   },
