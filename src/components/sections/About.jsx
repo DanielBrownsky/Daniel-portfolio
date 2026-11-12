@@ -57,7 +57,7 @@ export const About = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="py-16 md:py-20"
+      className="py-16 md:py-20 scroll-mt-24"
       style={{ backgroundColor: 'var(--color-bg)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
@@ -132,12 +132,7 @@ export const About = () => {
                 src="/Daniel.jpeg"
                 alt="Portrait of Daniel Ayeku wearing a patterned blazer and sunglasses outdoors."
                 className="w-full h-auto"
-                style={{
-                  aspectRatio: '3/4',
-                  '@media (min-width: 768px) and (max-width: 1279px)': {
-                    aspectRatio: '16/9',
-                  }
-                }}
+                style={{ aspectRatio: '3/4' }}
                 loading="lazy"
               />
             </div>

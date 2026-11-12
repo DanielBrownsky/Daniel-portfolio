@@ -40,10 +40,10 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   }, [])
 
   const navItems = [
-    { id: "project", label: "Work" },
+    { id: "work", label: "Work" },
     { id: "about", label: "About" },
-    { id: "resume", label: "Résumé", external: true, disabled: !site.resumeUrl },
-    { id: "contact", label: "Let's Talk", external: true },
+    { id: "resume", label: "Résumé", external: true },
+    { id: "contact", label: "Let's Talk"},
   ]
 
   return (
@@ -93,39 +93,29 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           )}
 
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => {
-              if (item.disabled) {
-                return (
-                  <span
-                    key={item.id}
-                    className="text-base font-medium transition-colors duration-200 px-2 py-1"
-                    style={{ color: 'var(--color-text-muted)', cursor: 'not-allowed' }}
-                  >
-                    {item.label}
-                  </span>
-                )
-              }
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={item.id === "resume" ? site.resumeUrl : `#${item.id}`}
+                target={item.id === "resume" ? "_blank" : undefined}
+                rel={item.id === "resume" ? "noopener noreferrer" : undefined}
+                className="text-base font-medium transition-colors duration-200 rounded px-2 py-1 group"
+                style={{
+                  color:
+                    activeSection === item.id
+                      ? "var(--color-text-primary)"
+                      : "var(--color-text-secondary)",
+                }}
+              >
+                {item.label}
 
-              return (
-                <a
-                  key={item.id}
-                  href={item.external ? (item.id === 'resume' ? '#' : `#${item.id}`) : `#${item.id}`}
-                  target={item.external && item.id !== 'resume' ? "_blank" : undefined}
-                  rel={item.external && item.id !== 'resume' ? "noopener noreferrer" : undefined}
-                  className="text-base font-medium transition-colors duration-200 rounded px-2 py-1 group"
-                  style={{
-                    color: activeSection === item.id ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  }}
-                >
-                  {item.label}
-                  {item.external && (
-                    <span className="inline-block ml-1 transform transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      ↗
-                    </span>
-                  )}
-                </a>
-              )
-            })}
+                {item.external && (
+                  <span className="inline-block ml-1 transform transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    ↗
+                  </span>
+                )}
+              </a>
+            ))}
           </div>
         </div>
       </div>

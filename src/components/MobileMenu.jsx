@@ -31,10 +31,10 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   }, [menuOpen, setMenuOpen])
 
   const navItems = [
-    { id: "project", label: "Work" },
+    { id: "work", label: "Work" },
     { id: "about", label: "About" },
-    { id: "resume", label: "Résumé", external: true, disabled: !site.resumeUrl },
-    { id: "contact", label: "Let's Talk", external: true },
+    { id: "resume", label: "Résumé", external: true },
+    { id: "contact", label: "Let's Talk" },
   ]
 
   return (
@@ -76,50 +76,30 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       </button>
 
       <div className="flex flex-col items-center space-y-6">
-        {navItems.map((item, index) => {
-          if (item.disabled) {
-            return (
-              <span
-                key={item.id}
-                className="text-2xl font-medium transition-all duration-300 rounded px-4 py-2"
-                style={{
-                  color: 'var(--color-text-muted)',
-                  cursor: 'not-allowed',
-                  opacity: menuOpen ? 1 : 0,
-                  transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
-                  transitionDelay: menuOpen ? `${index * 50}ms` : "0ms"
-                }}
-              >
-                {item.label}
+        {navItems.map((item, index) => (
+          <a
+            key={item.id}
+            ref={index === 0 ? firstLinkRef : null}
+            href={item.id === 'resume' ? site.resumeUrl : `#${item.id}`}
+            target={item.id === 'resume' ? "_blank" : undefined}
+            rel={item.id === 'resume' ? "noopener noreferrer" : undefined}
+            onClick={() => setMenuOpen(false)}
+            className="text-2xl font-medium transition-all duration-300 rounded px-4 py-2 group"
+            style={{
+              color: 'var(--color-text-primary)',
+              opacity: menuOpen ? 1 : 0,
+              transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: menuOpen ? `${index * 50}ms` : "0ms"
+            }}
+          >
+            {item.label}
+            {item.external && (
+              <span className="inline-block ml-1 transform transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                ↗
               </span>
-            )
-          }
-
-          return (
-            <a
-              key={item.id}
-              ref={index === 0 ? firstLinkRef : null}
-              href={item.external ? (item.id === 'resume' ? '#' : `#${item.id}`) : `#${item.id}`}
-              target={item.external && item.id !== 'resume' ? "_blank" : undefined}
-              rel={item.external && item.id !== 'resume' ? "noopener noreferrer" : undefined}
-              onClick={() => setMenuOpen(false)}
-              className="text-2xl font-medium transition-all duration-300 rounded px-4 py-2 group"
-              style={{
-                color: 'var(--color-text-primary)',
-                opacity: menuOpen ? 1 : 0,
-                transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
-                transitionDelay: menuOpen ? `${index * 50}ms` : "0ms"
-              }}
-            >
-              {item.label}
-              {item.external && (
-                <span className="inline-block ml-1 transform transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  ↗
-                </span>
-              )}
-            </a>
-          )
-        })}
+            )}
+          </a>
+        ))}
       </div>
     </div>
   )

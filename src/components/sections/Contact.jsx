@@ -57,7 +57,7 @@ export const Contact = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="py-16 md:py-20"
+      className="py-16 md:py-20 scroll-mt-24"
       style={{ backgroundColor: 'var(--color-bg)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">

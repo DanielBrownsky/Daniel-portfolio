@@ -77,7 +77,7 @@ export const Home = () => {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
                 <a
-                  href="#project"
+                  href="#work"
                   className="inline-flex items-center gap-2 text-base font-medium transition-colors duration-150 group"
                   style={{ color: 'var(--color-text-primary)' }}
                 >

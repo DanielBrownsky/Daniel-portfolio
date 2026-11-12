@@ -11,8 +11,8 @@ import { HowIWork } from './components/sections/HowIWork'
 import { Experience } from './components/sections/Experience'
 import { Toolbox } from './components/sections/Toolbox'
 import { About } from './components/sections/About';
-import { Project } from './components/sections/Project';
 import { Contact } from './components/sections/Contact';
+import { Footer } from './components/Footer';
 
 
 
@@ -36,8 +36,8 @@ function App() {
         <Experience />
         <Toolbox />
         <About />
-        <Project />
         <Contact />
+        <Footer />
       </div>
     </>
   )

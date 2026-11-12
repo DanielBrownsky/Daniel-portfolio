@@ -93,7 +93,8 @@ export const KampusPlugShowcase = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-20"
+      id="work"
+      className="py-16 md:py-20 scroll-mt-10"
       style={{ backgroundColor: 'var(--color-bg)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">

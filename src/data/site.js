@@ -11,5 +11,5 @@ export const site = {
   linkedin: "daniel-ayeku-b5a65840a",
   twitter: "AyekuDaniel",
   loadingText: "Ayeku Daniel Portfolio",
-  resumeUrl: null, // Will be added when PDF is available
+  resumeUrl: "/Daniel_Ayeku_Resume.pdf",
 };
