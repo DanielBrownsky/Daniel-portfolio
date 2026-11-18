@@ -1,0 +1,151 @@
+export const projects = [
+  {
+    id: "alumni-connect",
+    slug: "alumni-connect",
+    title: "Alumni Connect",
+    category: "featured",
+    description: "Alumni Connect connects students with alumni for mentorship, career opportunities, and continued university engagement. The platform includes role-based authentication, profiles, mentorship requests, job postings, applications, and real-time activity.",
+    role: "Final Year Project",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+    highlights: [
+      "Role-based authentication",
+      "PostgreSQL data modeling",
+      "Row Level Security",
+      "Real-time updates",
+    ],
+    liveUrl: "https://alumni-connect-beta-five.vercel.app/",
+    githubUrl: "https://github.com/DanielBrownsky/Alumni-connect.git",
+    featured: true,
+    status: "live",
+    image: null,
+    images: [],
+    // Showcase-specific content
+    showcase: {
+      eyebrow: "SELECTED WORK / 02",
+      fullDescription: "Alumni Connect is a platform connecting students and alumni through mentorship, job opportunities and professional networking, designed to keep their community connected beyond graduation.",
+      supportingCopy: "I built Alumni Connect across the stack, implementing role-based authentication, student and alumni dashboards, mentorship requests, job listings and applications, and database access controls using Supabase.",
+      showcaseRole: "Full-stack Developer",
+      period: "2026",
+      showcaseTech: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
+      screenshots: {
+        dashboard: "/images/projects/alumni-connect/dashboard.png",
+        mentorship: "/images/projects/alumni-connect/mentorship.png"
+      }
+    }
+  },
+  {
+    id: "kampusplug",
+    slug: "kampusplug",
+    title: "KampusPlug",
+    category: "featured",
+    description: "KampusPlug is a campus marketplace built to help students across Nigerian universities buy and sell within their school communities. I contributed to the product as part of a collaborative team of developers and designers, working on a production-oriented Next.js application designed for real users.",
+    role: "Collaborative Project",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    highlights: [
+      "Collaborative development",
+      "Responsive UI",
+      "Reusable components",
+      "TypeScript",
+      "Product-focused development",
+    ],
+    liveUrl: "https://www.kampusplug.com/",
+    githubUrl: "https://github.com/Skywonda/kampusplug.git",
+    featured: true,
+    status: "live",
+    image: null,
+    images: [],
+    // Showcase-specific content
+    showcase: {
+      eyebrow: "SELECTED WORK / 01",
+      fullDescription: "KampusPlug is a campus marketplace connecting students with verified vendors, making it easier to discover products, shop and sell within their campus community.",
+      supportingCopy: "As co-founder and frontend developer, I've worked on product discovery, cart functionality, vendor wallets and withdrawal flows. I'm also building the internal Admin Dashboard that helps manage the platform.",
+      showcaseRole: "Co-founder • Frontend Developer",
+      period: "2025 → Present",
+      showcaseTech: ["Next.js", "TypeScript", "Tailwind CSS", "TanStack Query"],
+      screenshots: {
+        marketplace: "/images/kampusplug/marketplace.png",
+        admin: "/images/kampusplug/admin-campuses.png"
+      }
+    }
+  },
+  {
+    id: "siwes-tracker",
+    slug: "siwes-tracker",
+    title: "SIWES Tracker",
+    category: "other",
+    description: "A practical tool for students to organize industrial training logs, track their progress and stay on top of their placement.",
+    tech: ["React", "JavaScript", "LocalStorage"],
+    highlights: [
+      "LocalStorage persistence",
+      "State management",
+      "Responsive dashboard",
+    ],
+    liveUrl: "https://siwes-tracker.vercel.app/",
+    githubUrl: "https://github.com/DanielBrownsky/siwes-tracker.git",
+    featured: false,
+    status: "live",
+    image: null,
+    images: [],
+    // Showcase-specific content
+    showcase: {
+      description: "I built SIWES Tracker to help students manage their industrial training, organize daily logs, monitor progress and keep track of their remaining training days.",
+      tech: ["React", "JavaScript", "CSS", "LocalStorage"],
+      screenshot: "/images/projects/siwes-tracker/dashboard.png"
+    }
+  },
+  {
+    id: "db-gym-fit",
+    slug: "db-gym-fit",
+    title: "DB-Gym-Fit",
+    category: "other",
+    description: "Custom workout generator creating personalized routines based on training style and fitness goals.",
+    tech: ["React", "JavaScript", "TailwindCSS", "HTML/CSS"],
+    highlights: [
+      "Dynamic workout generation",
+      "Custom filtering logic",
+      "Responsive UI",
+    ],
+    liveUrl: "https://db-gym-fit.vercel.app/",
+    githubUrl: "https://github.com/DanielBrownsky/DB-Gym-Fit.git",
+    featured: false,
+    status: "live",
+    image: null,
+    images: [],
+  },
+  {
+    id: "nasa-apod",
+    slug: "nasa-apod",
+    title: "NASA APOD Viewer",
+    category: "secondary",
+    description: "Displays NASA's Astronomy Picture of the Day with search functionality and detailed descriptions.",
+    tech: ["React", "JavaScript", "REST API"],
+    highlights: [],
+    liveUrl: "https://nasa-apod-rho.vercel.app/",
+    githubUrl: "https://github.com/DanielBrownsky/nasa-apod.git",
+    featured: false,
+    status: "live",
+    image: null,
+    images: [],
+    // Showcase-specific content
+    showcase: {
+      description: "I built a React application that uses NASA's API to display the Astronomy Picture of the Day, bringing daily space imagery and information into one simple interface.",
+      tech: ["React", "JavaScript", "CSS", "NASA API"],
+      screenshot: "/images/projects/nasa-apod/home.png"
+    }
+  },
+  {
+    id: "to-do-list",
+    slug: "to-do-list",
+    title: "To-Do List App",
+    category: "secondary",
+    description: "Task manager with snooze functionality, custom alerts, and animated completion for productivity tracking.",
+    tech: ["React", "CSS", "LocalStorage"],
+    highlights: [],
+    liveUrl: "https://DanielBrownsky.github.io/to-do-list",
+    githubUrl: "https://github.com/DanielBrownsky/to-do-list.git",
+    featured: false,
+    status: "live",
+    image: null,
+    images: [],
+  },
+];
